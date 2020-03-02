@@ -3,16 +3,16 @@ import river from '../components/river.js'
 
 const addBear = (e) => {
     e.preventDefault();
-    const bearName = document.getElementById('bear-name').value;
-    const bearImage = document.getElementById('bear-image').value;
+    const bearName= $('#bear-name').val();
+    const bearImage = $('#bear-image').val();
     bearsData.setBears({name:bearName, imageUrl: bearImage});
     river.printAllBears();
-    document.getElementById('new-bear-form').reset();
+    $('#new-bear-form').trigger('reset');
    };
 
 
 const sumbitBearEvent = () => {
-document.getElementById('bear-button').addEventListener('click',addBear);
+$('#bear-button').click(addBear);
 };
 
 export default { sumbitBearEvent }
