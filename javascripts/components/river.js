@@ -8,6 +8,7 @@ const printAllBears = () => {
     domString += `<img src="${bear.imageUrl}" class="card-img-top" alt="...">`
     domString += '<div class="card-body">'
     domString += `<h5 class="card-title">${bear.name}</h5>`
+    domString += '<button type="submit" class="btn btn-primary" id="fish-attempt">Catch Fish</button>'
     domString += '</div>' 
     domString += '</div>'
    

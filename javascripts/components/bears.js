@@ -5,7 +5,15 @@ const addBear = (e) => {
     e.preventDefault();
     const bearName = document.getElementById('bear-name').value;
     const bearImage = document.getElementById('bear-image').value;
-    bearsData.setBears({name:bearName, imageUrl: bearImage});
+    const allBears = bearsData.getBears();
+    bearsData.setBears({
+        name:bearName, 
+        imageUrl: bearImage,
+        bearId:`bear${allBears.length +1})`,
+        fishAttempts: 0,
+        fishCaught: 0,
+    })
+
     river.printAllBears();
     document.getElementById('new-bear-form').reset();
    };
