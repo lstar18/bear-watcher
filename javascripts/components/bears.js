@@ -3,9 +3,9 @@ import river from '../components/river.js'
 
 const addBear = (e) => {
     e.preventDefault();
-    const bearName = document.getElementById('bear-name').value;
-    const bearImage = document.getElementById('bear-image').value;
-    const allBears = bearsData.getBears();
+ const bearName= $('#bear-name').val();
+    const bearImage = $('#bear-image').val();  
+const allBears = bearsData.getBears();
     bearsData.setBears({
         name:bearName, 
         imageUrl: bearImage,
@@ -13,14 +13,13 @@ const addBear = (e) => {
         fishAttempts: 0,
         fishCaught: 0,
     })
-
     river.printAllBears();
-    document.getElementById('new-bear-form').reset();
+    $('#new-bear-form').trigger('reset');
    };
 
 
 const sumbitBearEvent = () => {
-document.getElementById('bear-button').addEventListener('click',addBear);
+$('#bear-button').click(addBear);
 };
 
 export default { sumbitBearEvent }
