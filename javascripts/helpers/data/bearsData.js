@@ -7,10 +7,9 @@ const getBears = () => {
     return bears
 };
 
-const fishAttemptEvent = (e) => {
-    const bearId = e.target.id
-    const bearPosition = getBears.findIndex((p) => p.id === bearId);
-        getBears[bearPosition].fishAttempts += 1
+const addFishAttempt = (bearId) => {
+    const bearPosition = bears.findIndex((bear) => bear.id === bearId);
+    bears[bearPosition].fishAttempts += 1
 }
 
-export default { getBears, setBears };
+export default { getBears, setBears, addFishAttempt };
