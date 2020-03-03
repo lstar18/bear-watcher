@@ -3,9 +3,16 @@ import river from '../components/river.js'
 
 const addBear = (e) => {
     e.preventDefault();
-    const bearName= $('#bear-name').val();
-    const bearImage = $('#bear-image').val();
-    bearsData.setBears({name:bearName, imageUrl: bearImage});
+ const bearName= $('#bear-name').val();
+    const bearImage = $('#bear-image').val();  
+const allBears = bearsData.getBears();
+    bearsData.setBears({
+        name:bearName, 
+        imageUrl: bearImage,
+        bearId:`bear${allBears.length +1})`,
+        fishAttempts: 0,
+        fishCaught: 0,
+    })
     river.printAllBears();
     $('#new-bear-form').trigger('reset');
    };
